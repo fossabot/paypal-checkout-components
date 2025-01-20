@@ -4,6 +4,7 @@
 [![code coverage][coverage-badge]][coverage]
 [![npm version][version-badge]][package]
 [![apache license][license-badge]][license]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAremixdj%2Fpaypal-checkout-components.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAremixdj%2Fpaypal-checkout-components?ref=badge_shield)
 
 [build-badge]: https://img.shields.io/github/actions/workflow/status/paypal/paypal-checkout-components/main.yml?branch=main&logo=github&style=flat-square
 [build]: https://github.com/paypal/paypal-checkout-components/actions?query=workflow%3Abuild
@@ -135,3 +136,7 @@ Our usage of svg logos is optimized for performance. Here's how it works for the
 - First Render - Buttons are first rendered on the client-side inside an `<iframe>` tag using the code bundled inside the JS SDK script. This `<iframe>` tag has no src attribute at this point in the rendering life cycle. We leverage the `__WEB__` global variable to determine if we are rendering client-side or server-side. The `__WEB__` global variable will equal true when rendering client-side. To minimize the bundle size of the JS SDK script, we load these svg logos from the www.paypalobjects.com CDN as external images (ex: `<PayPalLogoExternalImage />`).
 
 - Second Render - The second phase of rendering happens on the server-side. This `<iframe>` tag is fully rendered by setting the src attribute and making an http request to the server to populate the contents which are securely hosted by PayPal's servers on www.paypal.com. The same code in this repo is used to render the buttons on the server-side. To ensure there are no issues with the logos, we have decided to inline the svg code for this server-side render (ex: `<PayPalLogoInlineSVG />`). The `__WEB__` global variable is set to false to control what code executes during the server render.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAremixdj%2Fpaypal-checkout-components.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAremixdj%2Fpaypal-checkout-components?ref=badge_large)
